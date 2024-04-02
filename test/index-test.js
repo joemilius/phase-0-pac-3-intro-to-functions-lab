@@ -1,3 +1,5 @@
+require ( './root.js' );
+
 
 describe('shout(string)', function() {
   it('receives one argument and returns it in all caps', function() {
@@ -35,16 +37,18 @@ describe('logWhisper(string)', function() {
   })
 })
 
-describe('sayHiToGrandma(string)', function() {
+describe('sayHiToHeadphonedRoommate(string)', function() {
   it('returns "I can\'t hear you!" if `string` is lowercase', function() {
-    expect(sayHiToGrandma('hello')).toEqual("I can't hear you!");
+    expect(sayHiToHeadphonedRoommate('hello')).toEqual("I can't hear you!");
   })
 
   it('returns "YES INDEED!" if `string` is uppercase', function() {
-    expect(sayHiToGrandma('HELLO')).toEqual("YES INDEED!");
+    expect(sayHiToHeadphonedRoommate('HELLO')).toEqual("YES INDEED!");
   })
 
-  it('returns "I love you, too." if `string` is "I love you, Grandma."`', function() {
-    expect(sayHiToGrandma("I love you, Grandma.")).toEqual("I love you, too.");
-  })
+  it('returns "I would love to!" if `string` is "Let\'s have dinner together!"`', function () {
+    expect(sayHiToHeadphonedRoommate("Let's have dinner together!")).toEqual(
+      "I would love to!"
+    );
+  });
 })
